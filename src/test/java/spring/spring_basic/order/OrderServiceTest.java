@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import spring.spring_basic.AppConfig;
+import spring.spring_basic.AppConfig2;
 import spring.spring_basic.member.Grade;
 import spring.spring_basic.member.Member;
 import spring.spring_basic.member.MemberService;
@@ -19,7 +20,7 @@ public class OrderServiceTest {
 
     @BeforeEach
     public void beforeEach() {
-        AppConfig appConfig = new AppConfig();
+        AppConfig2 appConfig = new AppConfig2();
         memberService = appConfig.memberService();
         orderService = appConfig.orderService();
     }

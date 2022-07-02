@@ -5,13 +5,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import spring.spring_basic.AppConfig;
+import spring.spring_basic.AppConfig2;
 
 public class MemberServiceTest {
     MemberService memberService;
 
     @BeforeEach
     public void beforeEach() {
-        AppConfig appConfig = new AppConfig();
+        AppConfig2 appConfig = new AppConfig2();
         memberService = appConfig.memberService();
     }
 
