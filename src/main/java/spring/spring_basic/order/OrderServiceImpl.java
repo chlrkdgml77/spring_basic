@@ -1,15 +1,17 @@
 package spring.spring_basic.order;
 
+import lombok.RequiredArgsConstructor;
 import spring.spring_basic.discount.DiscountPolicy;
 import spring.spring_basic.discount.FixDiscountPolicy;
 import spring.spring_basic.member.Member;
 import spring.spring_basic.member.MemberRepository;
 import spring.spring_basic.member.MemoryMemberRepository;
 
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
 
-    private MemberRepository memberRepository = new MemoryMemberRepository();
-    private DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
 
 //    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
 //        this.memberRepository = memberRepository;

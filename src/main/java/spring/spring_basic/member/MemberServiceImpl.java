@@ -1,8 +1,11 @@
 package spring.spring_basic.member;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService{
 
-    private MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
 
 //    public MemberServiceImpl(MemberRepository memberRepository) {
 //        this.memberRepository = memberRepository;
