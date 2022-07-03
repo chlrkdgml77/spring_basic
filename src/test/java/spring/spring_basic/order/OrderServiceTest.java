@@ -35,5 +35,24 @@ public class OrderServiceTest {
         Order order = orderService.creatOrder(memberId, "itemA", 20000);
 
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(2000);
+
+        //추가
+        Assertions.assertThat(order.getBonusPoint()).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("OrderService 기능 테스트2")
+    void creatOrder2() {
+        Long memberId = 2L;
+        Member member = new Member(memberId, "memberA", Grade.VIP);
+        memberService.join(member);
+
+        Order order = orderService.creatOrder(memberId, "itemA", 20000);
+
+        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(2000);
+
+        //추가
+        //Assertions.assertThat(order.getBonusPoint()).isEqualTo(5);
+        Assertions.assertThat(order.getBonusPoint()).isEqualTo(200);
     }
 }

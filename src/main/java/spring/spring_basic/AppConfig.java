@@ -9,6 +9,9 @@ import spring.spring_basic.member.MemberServiceImpl;
 import spring.spring_basic.member.MemoryMemberRepository;
 import spring.spring_basic.order.OrderService;
 import spring.spring_basic.order.OrderServiceImpl;
+import spring.spring_basic.point.FixPointPolicy;
+import spring.spring_basic.point.PointPolicy;
+import spring.spring_basic.point.RatePointPolicy;
 
 public class AppConfig {
 //    public MemberService memberService() {
@@ -27,10 +30,15 @@ public class AppConfig {
     }
 
     public OrderService orderService() {
-        return new OrderServiceImpl(memberRepository(), discountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy(), pointPolicy()) ;
     }
 
     public DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
+    }
+
+    //추가
+    public PointPolicy pointPolicy() {
+        return new RatePointPolicy();
     }
 }
