@@ -1,6 +1,7 @@
 package spring.spring_basic.order;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 import spring.spring_basic.discount.DiscountPolicy;
 import spring.spring_basic.discount.FixDiscountPolicy;
 import spring.spring_basic.member.Member;
@@ -8,6 +9,7 @@ import spring.spring_basic.member.MemberRepository;
 import spring.spring_basic.member.MemoryMemberRepository;
 import spring.spring_basic.point.PointPolicy;
 
+@Component
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
 
